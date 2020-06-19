@@ -1,5 +1,3 @@
-# Chatbot---UI
-Front End UI of the Voice enabled Chat bot
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 import itertools
@@ -18,8 +16,6 @@ chatbot = ChatBot('Zorro',storage_adapter='chatterbot.storage.SQLStorageAdapter'
     logic_adapters=[
         {
             'import_path': 'chatterbot.logic.BestMatch',
-            
-            
             'maximum_similarity_threshold': 0.70
         },
          {
@@ -41,10 +37,8 @@ trainer = ListTrainer(chatbot)
 #trainer.train(clean_file)
 
 def get_feedback():
-
     text = input()
-    if 'yes' in text.lower():
-        
+    if 'yes' in text.lower():        
         return True
     #else: #'no' in text.lower():
     if 'no' in text.lower():
@@ -74,8 +68,7 @@ def fuzzy_logic(User_input):
     reply =  (Questions[Question_Index])
     print('{} --- is this the question you intend to ask'.format(reply))
     User_reply = input()
-    if User_reply == 'yes' or User_reply == 'Yes' or User_reply == 'YES':
-        
+    if User_reply == 'yes' or User_reply == 'Yes' or User_reply == 'YES':        
         #print('Cool ! I will get you the reply you wanted shortly')
         response = chatbot.get_response(
         reply
@@ -94,8 +87,6 @@ print('Hello, How are you, How can I help you ?')
 #set True
 
 while True:  
-
-
     input_statement = Statement(text=input())
     engine = pyttsx3.init()
     #time.sleep(2)
@@ -120,8 +111,6 @@ while True:
                 print('Okay Awesome, Is there anything else I can help you with ?')               
             if feedback is True: 
                 print('Please visit our site "https://www.reddotstorage.com/self-storage/search", Select your location and give us a call. Our customer service team will be able to assist you.')
-                
-
                     #text_tokens = word_tokenize(input_statement.text)
                     #tokens_without_sw = [word for word in text_tokens if not word in stopwords.words()]
                     #print(tokens_without_sw)
@@ -135,9 +124,7 @@ while True:
             print(print_statement)
             feedback = get_feedback()
             if feedback is True:
-                print('Okay Awesome, Is there anything else I can help you with ?')
-            
-
+                print('Okay Awesome, Is there anything else I can help you with ?')       
             if feedback is False:
                 print('please input the correct one')
                 correct_response = Statement(text=input())
