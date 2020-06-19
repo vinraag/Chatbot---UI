@@ -27,7 +27,7 @@ chatbot = ChatBot('Zorro',storage_adapter='chatterbot.storage.SQLStorageAdapter'
         }
     ])
         
-file = open("C:\\Users\\vndra\\red_dot_storage_2.txt")
+file = open(FilePAth)
 file_read = file.read().split('\n')
 #####file_read_1 = file_read.remove('')
 clean_file = []
@@ -83,17 +83,11 @@ def fuzzy_logic(User_input):
         print('I am sorry. I cannot understand what you say')
     #print(Ratio,Partial_Ratio,Token_Sort
     
-    
-    
-
-
 print('Hello, How are you, How can I help you ?')
 
 #set True
 
 while True:  
-
-
     input_statement = Statement(text=input())
     engine = pyttsx3.init()
     #time.sleep(2)
